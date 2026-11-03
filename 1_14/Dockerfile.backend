@@ -1,1 +1,20 @@
-# use here COPY 1_13 .
+FROM golang:1.16
+
+WORKDIR /app
+
+COPY 1_13/go.mod 1_13/go.sum ./
+
+RUN go mod download
+
+COPY 1_13/ .
+
+RUN go build
+
+RUN go test ./...
+
+EXPOSE 8080
+
+ENV PORT=8080
+ENV REQUEST_ORIGIN=http://localhost:5001
+
+CMD ["./server"]
