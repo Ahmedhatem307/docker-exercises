@@ -1,0 +1,3 @@
+https://memory-game-ts-phi.vercel.app/
+
+this is the same app I uploaded on Dockerhub but I pushed the Dockerfile to the GitHub repo and deployed it on Vercel
